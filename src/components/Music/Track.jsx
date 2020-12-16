@@ -6,7 +6,6 @@ export default function Track({ track, ...rest }) {
     <div class="card track" {...rest}>
       <Images album={album} />
       <div class="card-body">
-        Track
         <Song track={track} />
         <Album album={album} />
         <Artists artists={artists} />

@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <h5 class="card-header">Search: <small>{{ query }}</small></h5>
+    <h5 class="card-header">{{ t('search') }}: <small>{{ query }}</small></h5>
     <div class="card-body">
       <Tracks :music="music" />
     </div>
@@ -11,6 +11,7 @@
 import Tracks from './Tracks';
 import { onMounted, watch } from 'vue';
 import { searchMusic, useMusic } from '../../store/music';
+import { useI18n } from 'vue-i18n';
 
 export default {
   name: 'Music',
@@ -21,6 +22,7 @@ export default {
   },
   setup(props) {
     const music = useMusic();
+    const { t } = useI18n();
 
     onMounted(() => {
       const search = () => searchMusic({query: props.query, page: props.page});
@@ -28,7 +30,7 @@ export default {
       search();
     });
 
-    return { music };
+    return { music, t };
   },
 }
 </script>

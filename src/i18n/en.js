@@ -11,6 +11,7 @@ const langs = {
       global_storage: 'global storage with provider (no Vuex)',
       login: 'Login',
       logout: 'Logout',
+      search: 'Search',
       source_code: 'Source code',
       spotify_demo: 'Spotify Demo.',
       user: 'User',
