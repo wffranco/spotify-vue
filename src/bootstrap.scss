@@ -1,0 +1,35 @@
+@import 'bootstrap/scss/bootstrap';
+
+.form-control-md {
+  @extend .form-control;
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    .form-control-sm#{$infix} {
+      height: $input-height-sm !important;
+      padding: $input-padding-y-sm $input-padding-x-sm !important;
+      @include font-size($input-font-size-sm);
+      line-height: $input-line-height-sm !important;
+      @include border-radius($input-border-radius-sm);
+    }
+
+    .form-control-md#{$infix} {
+      height: $input-height !important;
+      padding: $input-padding-y $input-padding-x !important;
+      @include font-size($input-font-size);
+      line-height: $input-line-height !important;
+      @include border-radius($input-border-radius);
+    }
+
+    .form-control-lg#{$infix} {
+      height: $input-height-lg !important;
+      padding: $input-padding-y-lg $input-padding-x-lg !important;
+      @include font-size($input-font-size-lg);
+      line-height: $input-line-height-lg !important;
+      @include border-radius($input-border-radius-lg);
+    }
+  }
+}
