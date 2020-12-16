@@ -1,0 +1,48 @@
+span[role=button] {
+  cursor: pointer;
+}
+
+.layout {
+  min-height: 100vh;
+
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+
+  footer {
+    font-size: .875rem;
+    text-align: center;
+    background-color: #f7f7f7;
+  }
+}
+
+svg.bi {
+  fill: currentColor;
+  height: 1em;
+
+  &.bi-spotify {
+    height: 1.2em;
+  }
+  &.bi-search,
+  &.bi-circle,
+  &.bi-check-circle-fill {
+    margin-top: -.2em;
+  }
+}
+
+.card-deck {
+  .card.track {
+    margin: .5em;
+
+    @media (min-width: 320px) {
+      min-width: 250px;
+    }
+  }
+}
+
+.card-title {
+  margin-bottom: .5rem;
+  padding-bottom: .25em;
+}

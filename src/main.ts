@@ -1,5 +1,18 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
+import { createApp } from 'vue';
+import App from './App';
+import router from './router';
+import { createI18n } from './i18n';
+// import { getProviders } from './store/providers';
 
-createApp(App).use(router).mount('#app')
+import './bootstrap';
+import './main.scss';
+
+const i18n = createI18n();
+// const {store, actions} = getProviders();
+
+createApp(App)
+// .provide(...store)
+// .provide(...actions)
+.use(i18n)
+.use(router)
+.mount('#app')
